@@ -44,7 +44,7 @@ int main() {
 
     // Read inputs in triples
     for (int i = 0; i < MAX_ITEMS; i++) {
-        scanf(" %c %d %d", &items[i], &values[i], &weights[i]);
+        scanf("%c %d %d", &items[i], &values[i], &weights[i]);
     }
 
     int selected_bool[MAX_ITEMS];
