@@ -49,7 +49,7 @@ int main() {
 
     int selected_bool[MAX_ITEMS];
     int max_profit = knapSack(weights, values, selected_bool);
-    
+
     printf("Selected items (Boolean representation): ");
     for (int i = 0; i < MAX_ITEMS; i++) {
         printf("%d ", selected_bool[i]);
@@ -61,7 +61,8 @@ int main() {
     int result_index = 0;
     for (int i = 0; i < MAX_ITEMS; i++) {
         if (selected_bool[i]) {
-            result[result_index++] = items[i];
+            result[result_index] = items[i];
+            result_index++;
         }
     }
     
