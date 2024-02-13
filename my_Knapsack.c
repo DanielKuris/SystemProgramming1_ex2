@@ -13,6 +13,19 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
         temp_weights[i] = weights[i - 1];
     }
 
+    // Print temp_weights and temp_values arrays for debugging
+    printf("Temp Weights: ");
+    for (int i = 1; i <= MAX_ITEMS; i++) {
+        printf("%d ", temp_weights[i]);
+    }
+    printf("\n");
+
+    printf("Temp Values: ");
+    for (int i = 1; i <= MAX_ITEMS; i++) {
+        printf("%d ", temp_values[i]);
+    }
+    printf("\n");
+
     // Dynamic programming table for calculations
     int dp[MAX_ITEMS + 1][MAX_WEIGHT + 1] = {0}; 
 
@@ -67,7 +80,7 @@ int main() {
 
     // Read inputs in triples
     for (int i = 0; i < MAX_ITEMS; i++) {
-        scanf("%c %d %d", &items[i], &values[i], &weights[i]);
+        scanf(" %c %d %d", &items[i], &values[i], &weights[i]);
     }
 
     int selected_bool[MAX_ITEMS];
