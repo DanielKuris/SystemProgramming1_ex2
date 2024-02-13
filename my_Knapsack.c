@@ -15,13 +15,13 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
 
     // Print temp_weights and temp_values arrays for debugging
     printf("Temp Weights: ");
-    for (int i = 1; i <= MAX_ITEMS; i++) {
+    for (int i = 0; i <= MAX_ITEMS; i++) {
         printf("%d ", temp_weights[i]);
     }
     printf("\n");
 
     printf("Temp Values: ");
-    for (int i = 1; i <= MAX_ITEMS; i++) {
+    for (int i = 0; i <= MAX_ITEMS; i++) {
         printf("%d ", temp_values[i]);
     }
     printf("\n");
