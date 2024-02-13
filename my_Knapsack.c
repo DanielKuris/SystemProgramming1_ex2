@@ -22,9 +22,9 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
         for (int w = 0; w <= MAX_WEIGHT; w++) {
             if (i == 0 || w == 0) {
                 dp[i][w] = 0;
-            } else if (weights[i] <= w) {
-                if (values[i] + dp[i - 1][w - weights[i]] > dp[i - 1][w]) {
-                    dp[i][w] = values[i - 1] + dp[i - 1][w - weights[i - 1]];
+            } else if (temp_weights[i] <= w) {
+                if (temp_values[i] + dp[i - 1][w - temp_weights[i]] > dp[i - 1][w]) {
+                    dp[i][w] = temp_values[i - 1] + dp[i - 1][w - temp_weights[i - 1]];
                 } else {
                     dp[i][w] = dp[i - 1][w];
                 }
