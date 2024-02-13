@@ -60,7 +60,7 @@ int main() {
     char result[MAX_ITEMS];
     int result_index = 0;
     for (int i = 0; i < MAX_ITEMS; i++) {
-        if (selected_bool[i]) {
+        if (selected_bool[i]==1) {
             result[result_index] = items[i];
             result_index++;
         }
