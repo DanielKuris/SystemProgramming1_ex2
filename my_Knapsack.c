@@ -63,7 +63,7 @@ int main() {
     printf("Maximum profit: %d\n", max_profit);
     
     // Print selected items
-    printf("Selected items: ");
+    printf("Selected items: \n");
     for (int i = 0; i < result_index; i++) {
         printf("%c ", result[i]);
     }
