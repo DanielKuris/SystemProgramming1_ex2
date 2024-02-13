@@ -36,6 +36,7 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
     }
     
     //Updating selected_bool
+    int w = MAX_WEIGHT;
     for (int i = MAX_ITEMS; i > 0 && w > 0; i--) {
         if (i - 1 >= 0 && w - weights[i - 1] >= 0 && dp[i][w] != dp[i - 1][w]) {
             selected_bool[i - 1] = 1;
