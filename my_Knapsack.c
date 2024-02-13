@@ -30,24 +30,25 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
     int dp[MAX_ITEMS + 1][MAX_WEIGHT + 1] = {0}; 
 
 
-    //Updating the table
-    for (int i = 0; i <= MAX_ITEMS; i++) {
-        for (int w = 0; w <= MAX_WEIGHT; w++) {
-            if (i == 0 || w == 0) {
-                dp[i][w] = 0;
-            } 
-            else if (temp_weights[i] <= w) {
+   // Updating the table
+for (int i = 0; i <= MAX_ITEMS; i++) {
+    for (int w = 0; w <= MAX_WEIGHT; w++) {
+        if (i == 0 || w == 0) {
+            dp[i][w] = 0;
+        } else {
+            if (temp_weights[i] <= w) {
                 if (temp_values[i] + dp[i - 1][w - temp_weights[i]] > dp[i - 1][w]) {
-                    dp[i][w] = temp_values[i - 1] + dp[i - 1][w - temp_weights[i - 1]];
+                    dp[i][w] = temp_values[i] + dp[i - 1][w - temp_weights[i]];
                 } else {
                     dp[i][w] = dp[i - 1][w];
                 }
-            } 
-            else {
-                    dp[i][w] = dp[i - 1][w];
-                }
+            } else {
+                dp[i][w] = dp[i - 1][w];
+            }
         }
     }
+}
+
     
     // Print the dp table for debugging
     printf("Dynamic Programming Table:\n");
